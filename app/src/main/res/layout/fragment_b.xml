@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="sampleDetail"
+            type="com.example.sampleapp.model.SampleDetail" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/grid_0_5"
+        android:transitionName="@{@string/transition(position)}">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sample_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sample_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/grid_2"
+                android:paddingTop="@dimen/grid_2"
+                tools:context=".ui.sample.sampleFragment">
+
+                <TextView
+                    android:id="@+id/sample_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{sampleDetail.title}"
+                    android:textAppearance="@style/TextAppearance.Sample.Headline4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/sample_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{sampleDetail.description}"
+                    android:textAppearance="@style/TextAppearance.Sample.Body2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sample_title" />
+
+                <TextView
+                    android:id="@+id/sample_info_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/grid_2"
+                    android:text="@{sampleDetail.heading1}"
+                    android:textAppearance="@style/TextAppearance.Sample.Headline5"
+                    app:layout_constraintStart_toStartOf="@+id/sample_desc"
+                    app:layout_constraintTop_toBottomOf="@+id/sample_desc" />
+
+                <TextView
+                    android:id="@+id/sub_heading_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/grid_1"
+                    android:text="@{sampleDetail.subHeading1}"
+                    android:textAppearance="@style/TextAppearance.Sample.Body2"
+                    app:layout_constraintStart_toStartOf="@+id/sample_info_title"
+                    app:layout_constraintTop_toBottomOf="@+id/sample_info_title" />
+
+                <TextView
+                    android:id="@+id/sub_sub_heading_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/grid_2"
+                    android:text="@{sampleDetail.subSubHeading1}"
+                    android:textAppearance="@style/TextAppearance.Sample.Subtitle2"
+                    android:textColor="?android:textColorPrimary"
+                    app:layout_constraintStart_toStartOf="@+id/sub_heading_1"
+                    app:layout_constraintTop_toBottomOf="@+id/sub_heading_1" />
+
+                <TextView
+                    android:id="@+id/sub_heading_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/grid_2"
+                    android:text="@{sampleDetail.subHeading3}"
+                    android:textAppearance="@style/TextAppearance.Sample.Body2"
+                    app:layout_constraintStart_toStartOf="@+id/sub_sub_heading_1"
+                    app:layout_constraintTop_toBottomOf="@+id/sub_sub_heading_1" />
+
+                <TextView
+                    android:id="@+id/sub_sub_heading_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{sampleDetail.subSubHeading3}"
+                    android:textAppearance="@style/TextAppearance.Sample.Subtitle2"
+                    android:textColor="?android:textColorPrimary"
+                    app:layout_constraintStart_toStartOf="@+id/sub_heading_3"
+                    app:layout_constraintTop_toBottomOf="@+id/sub_heading_3" />
+
+                <TextView
+                    android:id="@+id/sub_heading_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{sampleDetail.subHeading2}"
+                    android:textAppearance="@style/TextAppearance.Sample.Body2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sub_heading_1"
+                    app:layout_constraintTop_toTopOf="@+id/sub_heading_1" />
+
+                <TextView
+                    android:id="@+id/sub_sub_heading_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{sampleDetail.subSubHeading2}"
+                    android:textAppearance="@style/TextAppearance.Sample.Subtitle2"
+                    android:textColor="?android:textColorPrimary"
+                    app:layout_constraintStart_toStartOf="@+id/sub_heading_2"
+                    app:layout_constraintTop_toBottomOf="@+id/sub_heading_2" />
+
+                <TextView
+                    android:id="@+id/sub_heading_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/grid_2"
+                    android:text="@{sampleDetail.subHeading4}"
+                    android:textAppearance="@style/TextAppearance.Sample.Body2"
+                    app:layout_constraintStart_toStartOf="@+id/sub_sub_heading_3"
+                    app:layout_constraintTop_toBottomOf="@+id/sub_sub_heading_3" />
+
+                <TextView
+                    android:id="@+id/sub_sub_heading_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{sampleDetail.subSubHeading4}"
+                    android:textAppearance="@style/TextAppearance.Sample.Subtitle2"
+                    android:textColor="?android:textColorPrimary"
+                    app:layout_constraintStart_toStartOf="@+id/sub_heading_4"
+                    app:layout_constraintTop_toBottomOf="@+id/sub_heading_4" />
+
+                <TextView
+                    android:id="@+id/heading_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/grid_2"
+                    android:text="@{sampleDetail.heading2}"
+                    android:textAppearance="@style/TextAppearance.Sample.Headline5"
+                    app:layout_constraintStart_toStartOf="@+id/sub_sub_heading_3"
+                    app:layout_constraintTop_toBottomOf="@+id/sub_sub_heading_4" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/sample_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:paddingBottom="56dp"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/sub_sub_heading_4"
+                    app:layout_constraintStart_toStartOf="@+id/heading_2"
+                    app:layout_constraintTop_toBottomOf="@+id/heading_2"
+                    tools:itemCount="20"
+                    tools:listitem="@layout/sample_item" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/sample_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/grid_2"
+            android:layout_marginBottom="@dimen/grid_2"
+            android:text="Sample"
+            android:textAppearance="@style/TextAppearance.Sample.Subtitle2"
+            app:icon="@drawable/ic_android_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
